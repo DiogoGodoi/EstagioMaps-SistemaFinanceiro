@@ -70,8 +70,11 @@ function atualizarValordoAtivo (indice, nome, quantidade, valor) {
 }
 
 
+
 //chamada das funções que utilizei como teste
-atualizarValordoAtivo(0, 'Petrobras', 3000, 25.56)
+
+
+/*atualizarValordoAtivo(0, 'Petrobras', 3000, 25.56)
 acrscentarAtivo('Magazine Luiza', 2000, 12.21)
 deletarAtivo(2)
 mostrarAtivo()
@@ -80,3 +83,4 @@ SaldoContaCorrente(2000.00)
 EntradaDeSaldo(233.32)
 SaidaDeSaldo(2233.32)
 mostrarSaldo()
+*/
