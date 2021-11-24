@@ -50,32 +50,34 @@ const ativosFinanceiros = [
 
 //função de deletar um ativo, é necessario passar como parâmetro o indice do objeto dentro do vetor para ele ser exluido    
 function deletarAtivo (indice) {
+    console.log('---------Ativo deletado com sucesso---------')
     delete ativosFinanceiros[indice]
 }    
 
 //função para acrescentar um ativo, é necessario passar como parâmetro o nome do ativo, a quantidade disponivel em mercado, e o valor
-function acrscentarAtivo (nome, quantidade, valor) {
+function acrescentarAtivo (nome, quantidade, valor) {
     const novoAtivo = {Nome: nome, Quantidade: quantidade, Valor: valor}
     ativosFinanceiros.push(novoAtivo)
-
-    this.mostrarAtivo = function () {
-        console.log(ativosFinanceiros)
-    } 
+    console.log('---------Ativo acrescentado com sucesso---------')
 }
+
+function mostrarAtivo () {
+    console.log('---------Todos os ativos---------')
+    console.log(ativosFinanceiros)
+} 
 
 //função para atualizar os dados do ativo, é necessario passar como parâmetro o indice do objeto dentro do vetor e os novos valores, nome, quantidade disponivel em mercado e o valor
 function atualizarValordoAtivo (indice, nome, quantidade, valor) {
     ativosFinanceiros[indice] = {Nome: nome, Quantidade: quantidade, Valor: valor}
-    console.log(ativosFinanceiros)
+    console.log('---------Ativo atualuzado com Sucesso---------')
 }
-
 
 
 //chamada das funções que utilizei como teste
 
 
 /*atualizarValordoAtivo(0, 'Petrobras', 3000, 25.56)
-acrscentarAtivo('Magazine Luiza', 2000, 12.21)
+acrescentarAtivo('Magazine Luiza', 2000, 12.21)
 deletarAtivo(2)
 mostrarAtivo()
 
