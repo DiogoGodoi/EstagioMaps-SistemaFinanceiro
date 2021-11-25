@@ -43,7 +43,7 @@ function extrato() {
 
 //objeto com os ativos financeiros
 const ativosFinanceiros = [
-        {Nome: 'MagazineLuiza', Quantidade: 10000, Valor: 12.25},
+        {Nome: 'Petrobrás', Quantidade: 10000, Valor: 22.56},
         {Nome: 'Facebook', Quantidade: 20000, Valor: 156.54},
         {Nome: 'Posto Ipiranga', Quantidade: 5000, Valor: 11.67},
     ]
@@ -75,10 +75,11 @@ function exibirAtivo () {
 
 //função de compra de ativo
 function comprarAtivo (indice, paramValor) {
+    let nome = ativosFinanceiros[indice].Nome
     let quantidade = ativosFinanceiros[indice].Quantidade
     let valor = quantidade = paramValor
     let resultado = quantidade * ativosFinanceiros[indice].Valor
-    console.log(`Você está comprando ${valor} ativos por R$ ${ativosFinanceiros[indice].Valor} reais a unidade, totalizando R$ ${resultado.toFixed(2)} reais`)
+    console.log(`Você está comprando ${valor} ativos da empresa ${nome} por R$ ${ativosFinanceiros[indice].Valor} reais a unidade, totalizando R$ ${resultado.toFixed(2)} reais`)
     const saldoConta = saldoBanco.Saldo -= resultado
     if(saldoConta <= 0) {
         console.log('Seu saldo é insuficiente para a aquisição')
@@ -101,10 +102,11 @@ exibirAtivoAtualCompra()
 
 //função de venda dos ativos
 function venderAtivo (indice, paramValor) {
+    let nome = ativosFinanceiros[indice].Nome
     let quantidade = ativosFinanceiros[indice].Quantidade
     let valor = quantidade = paramValor
     let resultado = quantidade * ativosFinanceiros[indice].Valor
-    console.log(`Você vendeu ${valor} ativos por R$ ${ativosFinanceiros[indice].Valor} reais a unidade, totalizando R$ ${resultado.toFixed(2)} reais`)
+    console.log(`Você vendeu ${valor} ativos da empresa ${nome} por R$ ${ativosFinanceiros[indice].Valor} reais a unidade, totalizando R$ ${resultado.toFixed(2)} reais`)
     const saldoConta = saldoBanco.Saldo += resultado
     console.log(`Seu saldo em conta é de ${saldoConta.toFixed(2)} reais`)
 
@@ -118,8 +120,12 @@ ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: a
     exibirAtivoAtualVenda()
 }
 
+
+
 SaldoInicialDaConta(500.00)
+deposito(1000.00)
 extrato()
+cadastrarAtivo('Magazine', 3000, 10.34)
 exibirAtivo()
-comprarAtivo(0, 4000)
-exibirAtivo()
+comprarAtivo(3, 10)
+venderAtivo(3, 10)
