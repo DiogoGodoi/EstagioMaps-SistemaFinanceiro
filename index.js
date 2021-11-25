@@ -92,8 +92,8 @@ ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: a
 if(ativosFinanceiros[indice].Quantidade <= 0){
 ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: ativosFinanceiros[indice].Quantidade = 0, Valor: ativosFinanceiros[indice].Valor}
 console.log('Não existem fundos suficientes, o valor foi ajustado para quantidade existente no banco')
-}if (saldoBanco.Saldo < paramValor) {
-ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: ativosFinanceiros[indice].Quantidade, Valor: ativosFinanceiros[indice].Valor}
+}else if (saldoConta <= 0) {
+ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: ativosFinanceiros[indice].Quantidade +=paramValor, Valor: ativosFinanceiros[indice].Valor}
    }
 }
 exibirAtivoAtualCompra()
@@ -113,14 +113,13 @@ function exibirAtivoAtualVenda() {
 ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: ativosFinanceiros[indice].Quantidade += paramValor, Valor: ativosFinanceiros[indice].Valor}
 if(ativosFinanceiros[indice].Quantidade > 0){
 ativosFinanceiros[indice] = {Nome: ativosFinanceiros[indice].Nome, Quantidade: ativosFinanceiros[indice].Quantidade += paramValor, Valor: ativosFinanceiros[indice].Valor}
+        }
     }
-}
-exibirAtivoAtualVenda()
+    exibirAtivoAtualVenda()
 }
 
 SaldoInicialDaConta(500.00)
 extrato()
 exibirAtivo()
-comprarAtivo(0, 1)
+comprarAtivo(0, 4000)
 exibirAtivo()
-extrato()
