@@ -1,4 +1,4 @@
-# TesteMaps
+# TesteMaps - Projeto feito em JS puro
 
 Nome: Diogo Godoi
 Amparo - SP
